@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #CFEBFB;
+  --panel: #FFFFFF;
+  --ink: #0B3B6E;
+  --soft: #E6F5FD;
+  --line: #9FD3F2;
+  --blue: #1572C8;
+  --yel: #FFD23F;
+  --grn: #1FA85A;
+  --gd: #0E7A3E;
+  font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Specific styling requested by user for the left column sidebar tabs */
+.sidebar-tab {
+  font-family: "Arial Black", "Arial-Black", Gadget, Impact, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(11, 59, 110, 0.08);
+}
+
+.sidebar-tab:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 10px rgba(11, 59, 110, 0.16);
+}
+
+/* Marquee continuous animation */
+@keyframes pikaMarquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: pikaMarquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbars while allowing smooth scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

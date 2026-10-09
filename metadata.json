@@ -1,0 +1,6 @@
+{
+  "name": "PikaSport – Que du sport",
+  "description": "Retrouve tous les highlights, chansons, téléfilms et gags de foot, basket, tennis, rugby, football américain et hockey.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

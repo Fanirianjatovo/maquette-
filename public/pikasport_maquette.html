@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PikaSport – Que du sport</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap">
+<style>
+:root{--bg:#CFEBFB;--panel:#fff;--ink:#0B3B6E;--soft:#E6F5FD;--line:#9FD3F2;--blue:#1572C8;--yel:#FFD23F;--grn:#1FA85A;--gd:#0E7A3E;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A2038;--panel:#102D4A;--ink:#EAF6FD;--soft:#173B5E;--line:#2A5985}}
+:root[data-theme="dark"]{--bg:#0A2038;--panel:#102D4A;--ink:#EAF6FD;--soft:#173B5E;--line:#2A5985}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:15px}
+button,a{font:inherit;color:inherit;cursor:pointer;text-decoration:none}
+button{border:0;background:none;text-align:left;padding:0}
+h1,h2,h3{margin:0}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+header{background:var(--panel);border-bottom:4px solid var(--yel)}
+.hd{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:14px 24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:28px;letter-spacing:-.5px}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--yel);border:3px solid var(--ink)}
+.logo b{color:var(--gd)}
+[data-theme="dark"] .logo b{color:var(--grn)}
+.srch{flex:1;min-width:220px;height:46px;border-radius:999px;background:var(--soft);border:2px solid var(--line);padding:0 20px;display:flex;align-items:center;opacity:.9}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:999px;font-weight:600;border:2px solid var(--ink);background:var(--panel)}
+.btn.g{background:var(--gd);color:#fff}
+.btn.y{background:var(--yel);color:#0B3B6E}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:0 24px 14px}
+.tab{padding:9px 20px;border-radius:10px;font-weight:600;border:2px solid var(--ink)}
+.tab.on{background:var(--ink);color:var(--bg)}
+.sport{display:flex;gap:10px;overflow-x:auto;padding:16px 24px;scrollbar-width:none}
+.sp{flex:none;display:flex;gap:8px;align-items:center;padding:10px 18px;border-radius:999px;font-weight:600;background:var(--panel);border:2px solid var(--line)}
+.sp svg{width:20px;height:20px}
+.hero{display:grid;grid-template-columns:minmax(0,2.7fr) minmax(200px,1fr);gap:20px;padding:6px 24px 28px}
+.big{background:#0A2F5C;border-radius:20px;min-height:400px;position:relative;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;gap:8px;width:100%;overflow:hidden}
+.big svg.bg{position:absolute;right:-30px;top:-20px;width:300px;height:300px;color:#1B4B84;opacity:.5}
+.big h2{font-size:clamp(28px,4vw,50px);line-height:1.05;font-weight:800;max-width:680px;position:relative}
+.big p{margin:0;max-width:460px;color:#fff;position:relative}
+.big .btn{align-self:flex-start;position:relative;margin-top:8px}
+.tag{align-self:flex-start;background:var(--yel);color:#0B3B6E;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:800;position:relative}
+.trend{background:var(--panel);border-radius:20px;padding:14px;border:2px solid var(--line)}
+.trend h3{font-size:17px;margin-bottom:6px}
+.tr{display:flex;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line);width:100%}
+.tr b{width:28px;height:28px;border-radius:50%;background:var(--yel);color:#0B3B6E;display:grid;place-items:center;flex:none}
+.tr span{font-size:12px;line-height:1.25}
+.tr small{display:block;opacity:.7;font-size:11px}
+.row{padding:8px 0 18px}
+.rh{display:flex;justify-content:space-between;align-items:center;padding:0 24px 10px}
+.rh h2{font-size:26px;display:flex;gap:10px;align-items:center}
+.rh h2 svg{width:28px;height:28px}
+.rh a{font-weight:600;color:var(--blue)}
+.rl{display:flex;gap:16px;overflow-x:auto;padding:4px 24px 12px;scroll-snap-type:x proximity;scroll-padding:0 24px}
+.card{flex:none;width:310px;background:var(--panel);border-radius:16px;border:2px solid var(--ink);overflow:hidden;scroll-snap-align:start;display:block}
+.th{height:210px;position:relative;display:grid;place-items:center}
+.th svg{width:96px;height:96px}
+.ty{position:absolute;left:10px;top:10px;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:800;color:#0B3B6E;border:1.5px solid #0B3B6E}
+.du{position:absolute;right:10px;bottom:10px;background:#0B3B6E;color:#fff;border-radius:5px;padding:2px 7px;font-size:12px}
+.pl{position:absolute;left:10px;bottom:8px;width:30px;height:30px;border-radius:50%;background:#fff;border:2px solid #0B3B6E}
+.pl:after{content:"";position:absolute;left:10px;top:6px;border-left:9px solid #0B3B6E;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.cb{padding:10px 12px 12px}
+.cb h3{font-size:13px;line-height:1.25;font-weight:600}
+.cb small{display:block;margin-top:4px;opacity:.7;font-size:11px}
+.cta{margin:10px 24px 36px;background:var(--grn);color:#0B3B6E;border-radius:20px;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:2px solid var(--ink)}
+.cta h2{font-size:30px}
+footer{background:#0A2F5C;color:#fff;padding:26px 24px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;padding:0}
+footer b{color:var(--yel);font-size:24px}
+footer a{padding:10px 0;display:inline-block}
+.ov{position:fixed;inset:0;background:rgba(5,22,40,.62);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.ov.show{display:flex}
+.modal{background:var(--panel);color:var(--ink);border:3px solid var(--ink);border-radius:20px;width:min(540px,100%);max-height:92vh;overflow:auto;padding:26px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal.w{width:min(760px,100%)}
+.x{position:absolute;right:14px;top:12px;width:40px;height:40px;border-radius:50%;background:var(--yel);color:#0B3B6E;font-size:20px;font-weight:800;text-align:center;line-height:40px}
+.modal h2{font-size:24px;margin:0 44px 10px 0}
+.modal p{line-height:1.6;margin:0 0 14px}
+.pv{background:#0A2F5C;border-radius:14px;aspect-ratio:16/9;display:grid;place-items:center;margin-bottom:16px;position:relative;color:#fff;font-size:13px;border:2px solid var(--line)}
+.pv .pp{width:74px;height:74px;border-radius:50%;background:var(--yel);position:relative}
+.pv .pp:after{content:"";position:absolute;left:29px;top:21px;border-left:23px solid #0B3B6E;border-top:16px solid transparent;border-bottom:16px solid transparent}
+.pv span.c{position:absolute;left:14px;bottom:10px}
+.modal label{display:block;font-weight:600;margin:12px 0 5px}
+.modal input[type=text],.modal input[type=email],.modal input[type=password],.modal input[type=search]{width:100%;height:46px;border-radius:10px;border:2px solid var(--line);background:var(--soft);color:var(--ink);padding:0 14px;font:inherit}
+.modal .btn{margin-top:16px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+
+/* Application Layout & Sidebar with Arial Black 16 Bold Tabs */
+.app{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside.nav{background:var(--panel);border-right:3px solid var(--ink);padding:16px 12px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh;overflow-y:auto}
+
+/* ONGLETS DE LA FILE DE GAUCHE : ARIAL BLACK 16 GRAS AVEC FOND */
+.nl{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  font-family:'Arial Black',Gadget,Impact,sans-serif !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  line-height:1.2;
+  background:var(--soft);
+  color:var(--ink);
+  border:2.5px solid var(--ink);
+  box-shadow:0 2px 4px rgba(11,59,110,0.08);
+  transition:all 0.16s ease-in-out;
+}
+.nl:hover{
+  background:#D7EFFF;
+  transform:translateX(4px);
+  box-shadow:0 4px 10px rgba(11,59,110,0.18);
+}
+.nl.on{
+  background:var(--yel);
+  color:var(--ink);
+  border:2.5px solid var(--ink);
+  box-shadow:0 4px 0 var(--ink);
+  transform:translateX(4px);
+}
+.nl svg{width:18px;height:18px;flex:none}
+
+.gh{
+  font-family:'Outfit',sans-serif;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.08em;
+  padding:14px 10px 4px;
+  color:var(--ink);
+  opacity:.75;
+  text-transform:uppercase;
+  border-bottom:2px solid var(--yel);
+  margin-top:6px;
+  margin-bottom:4px;
+}
+.jn{margin-top:14px;background:var(--yel);color:#0B3B6E;border-radius:16px;padding:14px;font-size:12px;border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink)}
+.jn b{display:block;font-size:16px;line-height:1.2;margin-bottom:6px;font-family:'Arial Black',sans-serif}
+.rg{margin-top:auto;background:rgba(31,168,90,0.15);color:#0B3B6E;border-radius:12px;padding:10px;font-size:10px;line-height:1.4;border:2px solid var(--grn)}
+.soc{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.soc>span{font-weight:600}
+.soc button{width:44px;height:44px;border-radius:50%;background:var(--yel);color:#0B3B6E;display:grid;place-items:center;border:2px solid var(--ink)}
+.soc svg{width:22px;height:22px}
+.fb{margin-top:14px;opacity:.85;font-size:13px;width:100%}
+@media (max-width:960px){.app{grid-template-columns:1fr}aside.nav{display:none}}
+.mq{position:relative;height:40px;overflow:hidden;background:var(--yel);color:#0B3B6E;border-bottom:3px solid var(--ink);font-weight:700}
+.mq span{position:absolute;top:0;left:0;white-space:nowrap;line-height:37px;animation:mq 30s linear infinite}
+@keyframes mq{from{transform:translateX(-100%);left:0}to{transform:translateX(0);left:100%}}
+@media (prefers-reduced-motion:reduce){.mq span{animation:none;position:static;display:block;padding:0 24px;overflow:hidden;text-overflow:ellipsis}}
+.logo{color:var(--ink);gap:10px;font-size:26px}.logo b{color:inherit}.lg{object-fit:contain;flex:none}.flogo{display:flex;align-items:center;gap:10px;color:var(--yel);font-weight:800;font-size:22px}.flogo b{color:var(--yel);font-size:22px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="s-foot" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="32" r="26"/><path d="M32 22l10 7-4 12H26l-4-12zM32 22V6M42 29l15-5M38 41l9 12M26 41l-9 12M22 29L7 24"/></g></symbol>
+<symbol id="s-basket" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="32" cy="32" r="26"/><path d="M6 32h52M32 6v52M14 13c10 10 10 28 0 38M50 13c-10 10-10 28 0 38"/></g></symbol>
+<symbol id="s-tennis" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><ellipse cx="32" cy="25" rx="16" ry="19"/><path d="M16 25h32M32 6v38M20 12l24 26M44 12L20 38M32 44v16"/></g></symbol>
+<symbol id="s-rugby" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><ellipse cx="32" cy="32" rx="27" ry="15" transform="rotate(-40 32 32)"/><path d="M22 42l20-20M29 35l-3-3M34 30l-3-3M39 25l-3-3"/></g></symbol>
+<symbol id="s-hockey" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l16 40h16M50 6L34 46H20M40 56h16"/></g></symbol>
+<symbol id="s-i" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="2.5"/></g></symbol></defs></svg>
+<div class="app"><aside class="nav" id="side"></aside><main>
+<header>
+<div class="mq" role="marquee" aria-label="Présentation du site"><span>PikaSport, le site 100 % sport : retrouve tous les highlights, chansons, téléfilms et gags de foot, basket, tennis, rugby, football américain et hockey. Toutes les vidéos sont créées par intelligence artificielle.</span></div>
+<div class="hd wrap">
+<a href="#" class="logo"><svg class="lg" width="46" height="46" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#FFD23F" stroke="#0B3B6E" stroke-width="4"/><path d="M32 20l12 9-5 15H25l-5-15z" fill="none" stroke="#0B3B6E" stroke-width="3"/></svg><span>PIKASPORT<b>.COM</b></span></a>
+<button class="srch" data-k="search">Rechercher un match, un sport, une chanson...</button>
+<button class="btn" data-k="login">Connexion</button>
+<button class="btn g" data-k="signup">Créer un compte</button>
+</div>
+<div class="tabs wrap" id="tabs"></div>
+</header>
+<div class="wrap sport" id="sports"></div>
+<section class="wrap hero">
+<button class="big" data-k="v" data-s="0" data-t="0">
+<svg class="bg"><use href="#s-foot"/></svg>
+<span class="tag">À LA UNE</span>
+<h2>Tous les sports en vidéos, en chansons, en téléfilms et en gags</h2>
+<p>Les plus beaux moments du foot, du basket, du tennis, du rugby, du football américain et du hockey.</p>
+<span class="btn y">Regarder maintenant</span>
+</button>
+<aside class="trend"><h3>Tendances</h3><div id="trend"></div></aside>
+</section>
+<div id="rows"></div>
+<div class="wrap"><div class="cta"><h2>Rejoins la communauté PikaSport</h2><button class="btn y" data-k="signup">Créer mon compte gratuit</button></div></div>
+<footer><div class="wrap"><a href="#" class="flogo"><svg class="lg" width="36" height="36" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#FFD23F" stroke="#fff" stroke-width="4"/></svg><b>PIKASPORT.COM</b></a>
+<div class="soc"><span>Suivez-nous</span>
+<button data-g="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></button>
+<button data-g="X" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 4l14 16M19 4L5 20"/></svg></button>
+<button data-g="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c0 3 2 5 5 5"/></svg></button>
+<button data-g="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.5-4.5A8 8 0 1 1 8.5 18.5z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 1c-1-.5-2-1.500-2.500-2.500l1-1-1-2z"/></svg></button>
+<button data-g="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></button>
+<button data-g="Snapchat" aria-label="Snapchat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3c-3 0-4.500 2-4.500 4.500V10l-2.500 1 2.500 1.500c0 2-1 3-3 4 2 1 3.500 1 4.500 1 1 1.500 2 2.500 3 2.500s2-1 3-2.500c1 0 2.500 0 4.500-1-2-1-3-2-3-4l2.500-1.500-2.500-1V7.500C16.500 5 15 3 12 3z"/></svg></button>
+</div>
+<span><a href="#">Contact</a> &nbsp; <a href="#">Mentions légales</a> &nbsp; <a href="#">Aide</a></span>
+<span class="fb">Toutes les vidéos sont créées par intelligence artificielle. Maquette de présentation PikaSport.</span></div></footer>
+</main></div>
+<div class="ov" id="ov"><div class="modal" id="md" role="dialog" aria-modal="true" aria-labelledby="mt"></div></div>
+<script>
+var S=[{n:"Foot",i:"foot",bg:"#1FA85A",c:"#0B3B6E"},{n:"Basket",i:"basket",bg:"#FFD23F",c:"#0B3B6E"},{n:"Tennis",i:"tennis",bg:"#8ED1F5",c:"#0B3B6E"},{n:"Rugby",i:"rugby",bg:"#0B3B6E",c:"#FFFFFF"},{n:"Football américain",i:"rugby",bg:"#0E7A3E",c:"#FFFFFF"},{n:"Hockey",i:"hockey",bg:"#BDE4FB",c:"#0B3B6E"}];
+var T=[{n:"Highlight",c:"#8ED1F5"},{n:"Chanson",c:"#FFD23F"},{n:"Téléfilm",c:"#1FA85A"},{n:"Gag",c:"#FFFFFF"}];
+var TI=[["Foot en vidéos : les plus beaux buts", "Foot en chansons : le chant des supporters", "Foot en téléfilm : la dernière chance", "Foot en gags : le gardien fait le show"], ["Basket en vidéos : les dunks de la saison", "Basket en chansons : le rythme du parquet", "Basket en téléfilm : la finale d'une vie", "Basket en gags : le ballon qui refuse d'entrer"], ["Tennis en vidéos : smash et revers au ralenti", "Tennis en chansons : la balade du court central", "Tennis en téléfilm : le tournoi des outsiders", "Tennis en gags : le ramasseur de balles au micro"], ["Rugby en vidéos : les essais les plus fous", "Rugby en chansons : le haka en musique", "Rugby en téléfilm : les héros du terrain boueux", "Rugby en gags : la mêlée qui tourne mal"], ["Foot US en vidéos : touchdown, le top 10", "Foot US en chansons : l'hymne du stade", "Foot US en téléfilm : le quarterback de rêve", "Foot US en gags : le coach perd son sifflet"], ["Hockey en vidéos : les arrêts impossibles", "Hockey en chansons : la chanson de la patinoire", "Hockey en téléfilm : duel sur la glace", "Hockey en gags : le palet qui rebondit partout"]];
+var D=["03:12","02:48","12:30","01:05"];
+var ic=function(n){return '<svg><use href="#s-'+n+'"/></svg>'};
+function card(s,t){var a=S[s];return '<button class="card" data-k="v" data-s="'+s+'" data-t="'+t+'"><div class="th" style="background:'+a.bg+';color:'+a.c+'">'+ic(a.i)+'<span class="ty" style="background:'+T[t].c+'">'+T[t].n+'</span><span class="pl"></span><span class="du">'+D[t]+'</span></div><div class="cb"><h3>'+TI[s][t]+'</h3><small>'+a.n+' · Vidéo IA</small></div></button>'}
+document.getElementById('tabs').innerHTML='<button class="tab on" data-g="Tout">Tout</button>'+T.map(function(t){return '<button class="tab" data-g="'+t.n+'s">'+t.n+'s</button>'}).join('');
+document.getElementById('sports').innerHTML=S.map(function(s){return '<button class="sp" data-g="'+s.n+'">'+ic(s.i)+s.n+'</button>'}).join('');
+document.getElementById('trend').innerHTML=[[0, 0, "Tous les sports en vidéos", "Les meilleurs moments · Vidéos"], [0, 1, "Tous les sports en chansons", "Hymnes et refrains · Chansons"], [0, 2, "Tous les sports en téléfilms", "Histoires de champions · Téléfilms"], [0, 3, "Tous les sports en gags", "Les fous rires du stade · Gags"], [3, 0, "Tous les sports, un seul club", "Foot, basket, tennis, rugby, foot US, hockey"]].map(function(p,i){return '<button class="tr" data-k="v" data-s="'+p[0]+'" data-t="'+p[1]+'"><b>'+(i+1)+'</b><span>'+p[2]+'<small>'+p[3]+'</small></span></button>'}).join('');
+document.getElementById('rows').innerHTML=S.map(function(s,i){return '<section class="row wrap" style="padding:8px 0 18px"><div class="rh"><h2>'+ic(s.i)+s.n+'</h2><a href="#" data-g="Tout '+s.n+'">Tout voir</a></div><div class="rl">'+[0,1,2,3].map(function(t){return card(i,t)}).join('')+'</div></section>'}).join('');
+var N=[["Accueil","on"],["Vidéos"],["Programme & résultats"],["Forum du club"],["Service client"],["MON COMPTE"],["Inscription / connexion","","login"],["Mes coordonnées"],["Mon historique"],["Mes retraits"],["Parrainage"],["DANS LES COULISSES"],["Formation paris sportifs"],["Devenir journaliste"],["Pika Shoot TV"]];
+document.getElementById('side').innerHTML=N.map(function(n){return n.length==1?'<div class="gh">'+n[0]+'</div>':'<button class="nl '+(n[1]||"")+'"'+(n[2]?' data-k="'+n[2]+'"':'')+'>'+ic('i')+n[0]+'</button>'}).join('')+'<div class="jn"><b>Votre sport.<br>Votre communauté.</b>Retrouvez vos analyses et échangez avec les passionnés.<br><br><button class="btn g" data-k="signup" style="color:#fff">Rejoindre le club</button></div><div class="rg"><b>18+ • GARDEZ LE CONTRÔLE</b><br>Le sport se partage. Les paris comportent des risques : endettement, dépendance, isolement.<br><b>Joueurs Info Service 09 74 75 13 13</b></div>';
+var ov=document.getElementById('ov'),md=document.getElementById('md');
+function show(h,w){md.className='modal'+(w?' w':'');md.innerHTML='<button class="x" aria-label="Fermer" data-x="1">×</button>'+h;ov.classList.add('show');var f=md.querySelector('input,.btn');if(f)f.focus()}
+function hide(){ov.classList.remove('show')}
+document.addEventListener('click',function(e){
+if(e.target===ov||e.target.closest('[data-x]')){hide();return}
+if(e.target.closest('#md'))return;
+var el=e.target.closest('[data-k],[data-g],button,a');if(!el)return;e.preventDefault();
+var k=el.getAttribute('data-k');
+if(k=='v'){var s=S[+el.getAttribute('data-s')],t=+el.getAttribute('data-t');show('<div class="pv"><span class="pp"></span><span class="c">Lecteur de démonstration · vidéo créée par IA · '+D[t]+'</span></div><h2 id="mt">'+TI[+el.getAttribute('data-s')][t]+'</h2><p><b>'+s.n+'</b> · '+T[t].n+'</p><p>Ici s\'affichera la vidéo, avec ses commentaires et les vidéos suivantes.</p><button class="btn y" data-x="1">Fermer</button>',1)}
+else if(k=='login')show('<h2 id="mt">Connexion</h2><form onsubmit="hide();return false"><label for="e">E-mail</label><input id="e" type="email"><label for="p">Mot de passe</label><input id="p" type="password"><button class="btn g" type="submit">Se connecter</button></form>');
+else if(k=='signup')show('<h2 id="mt">Créer mon compte</h2><form onsubmit="hide();return false"><label for="n">Pseudo</label><input id="n" type="text"><label for="e2">E-mail</label><input id="e2" type="email"><label for="p2">Mot de passe</label><input id="p2" type="password"><button class="btn g" type="submit">Rejoindre PikaSport</button></form>');
+else if(k=='search')show('<h2 id="mt">Rechercher</h2><label for="q">Un match, un sport, une chanson</label><input id="q" type="search" placeholder="Ex. dunk, haka, smash"><p style="margin-top:14px;opacity:.8">Suggestions : Les plus beaux buts · Le haka · Touchdown</p>');
+else{var t=(el.getAttribute('data-g')||el.textContent).replace(/\s+/g,' ').trim().slice(0,60);show('<h2 id="mt">'+t+'</h2><p>Ici s\'ouvrira la page « '+t+' » de PikaSport. Cette fenêtre est un exemple pour la maquette.</p><button class="btn y" data-x="1">OK</button>')}
+});
+document.addEventListener('keydown',function(e){if(e.key=='Escape')hide()});
+</script>
+</body>
+</html>
